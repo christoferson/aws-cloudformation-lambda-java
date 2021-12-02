@@ -34,5 +34,7 @@ aws cloudformation delete-stack --stack-name aws-cloudformation-lambda-java
 del -f out-template.yml invoke-result.json
 
 rmdir build /s /q
+
 rmdir target /s /q
+
 del -f .gradle
