@@ -44,8 +44,8 @@ public class Handler implements RequestHandler<SQSEvent, String> {
 		String response = new String();
 		// call Lambda API
 		logger.info("Getting account settings");
-		CompletableFuture<GetAccountSettingsResponse> accountSettings = lambdaClient
-				.getAccountSettings(GetAccountSettingsRequest.builder().build());
+		GetAccountSettingsRequest request = GetAccountSettingsRequest.builder().build();
+		CompletableFuture<GetAccountSettingsResponse> accountSettings = lambdaClient.getAccountSettings(request);
 		// log execution details
 		logger.info("ENVIRONMENT VARIABLES: {}", gson.toJson(System.getenv()));
 		logger.info("CONTEXT: {}", gson.toJson(context));
